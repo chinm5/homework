@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230829 16:01:04.050" rpa="false" schemaversion="4">
+<suite id="s1" name="Bai3" source="C:\Users\chinm5\Desktop\chinm5_testauto\bai3.robot">
+<test id="s1-t1" name="[AU_1] 1 Truy cập MSB từ GG" line="5">
+<kw name="Truy cập trang tìm kiếm GG">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.google.com.vn</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230829 16:01:04.191" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com.vn'.</msg>
+<status status="PASS" starttime="20230829 16:01:04.191" endtime="20230829 16:01:09.152"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:04.191" endtime="20230829 16:01:09.152"/>
+</kw>
+<kw name="Nhập vào ô tìm kiếm text &quot;MSB&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//textarea[@name="q"]</arg>
+<arg>MSB</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230829 16:01:09.153" level="INFO">Typing text 'MSB' into text field '//textarea[@name="q"]'.</msg>
+<status status="PASS" starttime="20230829 16:01:09.153" endtime="20230829 16:01:09.201"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:09.153" endtime="20230829 16:01:09.201"/>
+</kw>
+<kw name="Click gợi ý tìm kiếm thứ nhất">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="jZ2SBf"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230829 16:01:09.202" endtime="20230829 16:01:09.422"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="jZ2SBf"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 16:01:09.422" level="INFO">Clicking element '//*[@id="jZ2SBf"]'.</msg>
+<status status="PASS" starttime="20230829 16:01:09.422" endtime="20230829 16:01:09.577"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:09.202" endtime="20230829 16:01:09.577"/>
+</kw>
+<kw name="Click kết quả tìm kiếm đầu tiên">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230829 16:01:09.578" endtime="20230829 16:01:11.651"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 16:01:11.651" level="INFO">Clicking element '//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]'.</msg>
+<status status="PASS" starttime="20230829 16:01:11.651" endtime="20230829 16:01:15.550"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:09.577" endtime="20230829 16:01:15.550"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 16:01:20.551" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230829 16:01:15.550" endtime="20230829 16:01:20.551"/>
+</kw>
+<kw name="Tắt popup">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@id="fragment-34202-joci"]/div/div/div/span</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230829 16:01:20.551" endtime="20230829 16:01:20.572"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id="fragment-34202-joci"]/div/div/div/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 16:01:20.573" level="INFO">Clicking element '//div[@id="fragment-34202-joci"]/div/div/div/span'.</msg>
+<status status="PASS" starttime="20230829 16:01:20.572" endtime="20230829 16:01:20.604"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:20.551" endtime="20230829 16:01:20.604"/>
+</kw>
+<kw name="Text trên màn hình có chứa &quot;Chọn thẻ phù hợp với bạn&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Chọn thẻ phù hợp với bạn')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230829 16:01:20.604" endtime="20230829 16:01:20.618"/>
+</kw>
+<status status="PASS" starttime="20230829 16:01:20.604" endtime="20230829 16:01:20.618"/>
+</kw>
+<doc>Truy cập MSB từ GG</doc>
+<tag>tc_01</tag>
+<status status="PASS" starttime="20230829 16:01:04.190" endtime="20230829 16:01:20.618"/>
+</test>
+<status status="PASS" starttime="20230829 16:01:04.051" endtime="20230829 16:01:20.619"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">tc_01</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Bai3">Bai3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
