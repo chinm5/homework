@@ -1,102 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230829 16:01:04.050" rpa="false" schemaversion="4">
-<suite id="s1" name="Bai3" source="C:\Users\chinm5\Desktop\chinm5_testauto\bai3.robot">
-<test id="s1-t1" name="[AU_1] 1 Truy cập MSB từ GG" line="5">
-<kw name="Truy cập trang tìm kiếm GG">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.google.com.vn</arg>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230907 11:34:34.011" rpa="false" schemaversion="4">
+<suite id="s1" name="Bai4" source="C:\Users\chinm5\Desktop\Homework\5_testcase\bai4.robot">
+<test id="s1-t1" name="[AU_1] 1 Truy cập guru từ GG và add customer" line="8">
+<kw name="Truy cập guru 99" library="add_customer_guru_key" type="SETUP">
+<arg>https://demo.guru99.com/telecom/index.html</arg>
 <arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230829 16:01:04.191" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com.vn'.</msg>
-<status status="PASS" starttime="20230829 16:01:04.191" endtime="20230829 16:01:09.152"/>
+<msg timestamp="20230907 11:34:34.168" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/telecom/index.html'.</msg>
+<status status="PASS" starttime="20230907 11:34:34.168" endtime="20230907 11:34:42.006"/>
 </kw>
-<status status="PASS" starttime="20230829 16:01:04.191" endtime="20230829 16:01:09.152"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230907 11:34:42.007" endtime="20230907 11:34:42.125"/>
 </kw>
-<kw name="Nhập vào ô tìm kiếm text &quot;MSB&quot;">
+<status status="PASS" starttime="20230907 11:34:34.168" endtime="20230907 11:34:42.125"/>
+</kw>
+<kw name="Click Add Customer" library="add_customer_guru_key">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230907 11:34:42.126" endtime="20230907 11:34:42.608"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Click_add}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230907 11:34:42.608" endtime="20230907 11:34:42.624"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Click_add}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:42.625" level="INFO">Clicking element '//section[@id="one"]//h3/a'.</msg>
+<status status="PASS" starttime="20230907 11:34:42.624" endtime="20230907 11:34:43.994"/>
+</kw>
+<status status="PASS" starttime="20230907 11:34:42.126" endtime="20230907 11:34:43.994"/>
+</kw>
+<kw name="Tạo thông tin khách hàng" library="add_customer_guru_key">
+<arg>chi</arg>
+<arg>mai</arg>
+<arg>chinm@gmail.com</arg>
+<arg>mô tả tả vd</arg>
+<arg>0347152468</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ratio_done}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230907 11:34:43.995" endtime="20230907 11:34:44.009"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ratio_done}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.009" level="INFO">Clicking element '//label[contains(text(),'Done')]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.009" endtime="20230907 11:34:44.032"/>
+</kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>//textarea[@name="q"]</arg>
-<arg>MSB</arg>
+<arg>${inp_fname}</arg>
+<arg>${fname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230829 16:01:09.153" level="INFO">Typing text 'MSB' into text field '//textarea[@name="q"]'.</msg>
-<status status="PASS" starttime="20230829 16:01:09.153" endtime="20230829 16:01:09.201"/>
+<msg timestamp="20230907 11:34:44.033" level="INFO">Typing text 'chi' into text field '//input[@id="fname"]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.032" endtime="20230907 11:34:44.105"/>
 </kw>
-<status status="PASS" starttime="20230829 16:01:09.153" endtime="20230829 16:01:09.201"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inp_lname}</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.106" level="INFO">Typing text 'mai' into text field '//input[@id="lname"]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.105" endtime="20230907 11:34:44.149"/>
 </kw>
-<kw name="Click gợi ý tìm kiếm thứ nhất">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//*[@id="jZ2SBf"]</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230829 16:01:09.202" endtime="20230829 16:01:09.422"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inp_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.149" level="INFO">Typing text 'chinm@gmail.com' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.149" endtime="20230907 11:34:44.227"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="jZ2SBf"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230829 16:01:09.422" level="INFO">Clicking element '//*[@id="jZ2SBf"]'.</msg>
-<status status="PASS" starttime="20230829 16:01:09.422" endtime="20230829 16:01:09.577"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inp_addr}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.228" level="INFO">Typing text 'mô tả tả vd' into text field '//textarea[@name="addr"]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.227" endtime="20230907 11:34:44.274"/>
 </kw>
-<status status="PASS" starttime="20230829 16:01:09.202" endtime="20230829 16:01:09.577"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inp_phone}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.275" level="INFO">Typing text '0347152468' into text field '//input[@name="telephoneno"]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.274" endtime="20230907 11:34:44.325"/>
 </kw>
-<kw name="Click kết quả tìm kiếm đầu tiên">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230829 16:01:09.578" endtime="20230829 16:01:11.651"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230907 11:34:44.325" level="INFO">Clicking button '//input[@name="submit"]'.</msg>
+<status status="PASS" starttime="20230907 11:34:44.325" endtime="20230907 11:34:45.126"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230829 16:01:11.651" level="INFO">Clicking element '//div[@id="rso"]/div[1]//a/h3[contains(text(),'MSB')]'.</msg>
-<status status="PASS" starttime="20230829 16:01:11.651" endtime="20230829 16:01:15.550"/>
+<status status="PASS" starttime="20230907 11:34:43.994" endtime="20230907 11:34:45.126"/>
 </kw>
-<status status="PASS" starttime="20230829 16:01:09.577" endtime="20230829 16:01:15.550"/>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230907 11:34:45.127" endtime="20230907 11:34:47.323"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230829 16:01:20.551" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230829 16:01:15.550" endtime="20230829 16:01:20.551"/>
-</kw>
-<kw name="Tắt popup">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//div[@id="fragment-34202-joci"]/div/div/div/span</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230829 16:01:20.551" endtime="20230829 16:01:20.572"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//div[@id="fragment-34202-joci"]/div/div/div/span</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230829 16:01:20.573" level="INFO">Clicking element '//div[@id="fragment-34202-joci"]/div/div/div/span'.</msg>
-<status status="PASS" starttime="20230829 16:01:20.572" endtime="20230829 16:01:20.604"/>
-</kw>
-<status status="PASS" starttime="20230829 16:01:20.551" endtime="20230829 16:01:20.604"/>
-</kw>
-<kw name="Text trên màn hình có chứa &quot;Chọn thẻ phù hợp với bạn&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//div[contains(text(),'Chọn thẻ phù hợp với bạn')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230829 16:01:20.604" endtime="20230829 16:01:20.618"/>
-</kw>
-<status status="PASS" starttime="20230829 16:01:20.604" endtime="20230829 16:01:20.618"/>
-</kw>
-<doc>Truy cập MSB từ GG</doc>
-<tag>tc_01</tag>
-<status status="PASS" starttime="20230829 16:01:04.190" endtime="20230829 16:01:20.618"/>
+<doc>Truy cập guru từ GG và thêm mới customer</doc>
+<tag>add_01</tag>
+<status status="PASS" starttime="20230907 11:34:34.167" endtime="20230907 11:34:47.324"/>
 </test>
-<status status="PASS" starttime="20230829 16:01:04.051" endtime="20230829 16:01:20.619"/>
+<status status="PASS" starttime="20230907 11:34:34.013" endtime="20230907 11:34:47.327"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">tc_01</stat>
+<stat pass="1" fail="0" skip="0">add_01</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Bai3">Bai3</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Bai4">Bai4</stat>
 </suite>
 </statistics>
 <errors>
